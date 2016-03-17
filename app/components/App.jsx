@@ -32,10 +32,21 @@ export default class App extends React.Component {
     return (
       <div>
         <button onClick={this.addNote}>+</button>
-          <Notes notes={notes} onEdit={this.editNote} />
+          <Notes notes={notes}
+            onEdit={this.editNote}
+            onDelete={this.deleteNote} />
+
       </div>
     );
   }
+
+  deleteNote = (id, e) => {
+    e.stopPropagation();
+
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== id)
+    });
+  };
 
   addNote = () => {
     this.setState({
