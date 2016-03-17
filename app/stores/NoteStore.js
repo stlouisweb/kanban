@@ -7,6 +7,9 @@ class NoteStore {
     this.bindActions(NoteActions);
 
     this.notes = [];
+
+    // Log dispather events for this store.
+    // this.dispatcher.register(...)
   }
   create(note) {
     const notes = this.notes;
