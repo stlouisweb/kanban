@@ -16,7 +16,7 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <button className="add-lane" onClick={this.addLane}>+</button>
+        <button className="add-lane" onClick={this.addLane}>add category</button>
 
             <AltContainer
               stores={[LaneStore]}

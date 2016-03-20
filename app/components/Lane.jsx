@@ -34,14 +34,12 @@ export default class Lane extends React.Component {
     return connectDropTarget(
       <div {...props}>
         <div className="lane-header" onClick={this.activateLaneEdit}>
-          <div className="lane-add-note">
-            <button onClick={this.addNote}>+</button>
-          </div>
           <Editable className="lane-name" editing={lane.editing}
             value={lane.name} onEdit={this.editName} />
           <div className="lane-delete">
-          <button onClick={this.deleteLane}>x</button>
-        </div>
+            <button onClick={this.deleteLane}>x</button>
+          </div>
+            <button className="addNote" onClick={this.addNote}>add note</button>
         </div>
         <AltContainer
           stores={[NoteStore]}
