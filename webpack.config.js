@@ -10,7 +10,8 @@ const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
-  style: path.join(__dirname, 'app/main.css')
+  style: path.join(__dirname, 'app/main.css'),
+  test: path.join(__dirname, 'tests')
 
 };
 
@@ -150,4 +151,31 @@ if(TARGET === 'build' || TARGET === 'stats') {
         })
       ]
     });
+}
+
+if(TARGET === 'test' || TARGET === 'tdd') {
+  module.exports = merge(common, {
+    devtool: 'inline-source-map',
+    resolve: {
+      alias: {
+        'app': PATHS.app
+      }
+    },
+    module: {
+      preLoaders: [
+        {
+          test: /\.jsx?$/,
+          loaders: ['isparta-instrumenter'],
+          include: PATHS.app
+        }
+      ],
+      loaders: [
+        {
+          test: /\.jsx?$/,
+          loaders: ['babel?cacheDirectory'],
+          include: PATHS.test
+        }
+      ]
+    }
+  });
 }
