@@ -49,21 +49,16 @@ body {
   visibility: visible;
 }
 
-.add-lane {
+.add-lane, .lane-add-note button {
   cursor: pointer;
-  position: relative;
-      top: 0px;
-      left: 0px;
-}
-.add-link {
-  position: relative;
-      top: 0px;
-      left: 0px;
+
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
 }
 
-.delete-lane {
+.lane-delete button {
   padding: 0;
-float: right;
+
   cursor: pointer;
 
   color: white;
@@ -114,12 +109,4 @@ float: right;
 }
 .note:hover .delete-note {
   visibility: visible;
-}
-#app .panel-heading {
-      padding: 6px 15px;
-}
-#app .panel-title {
-  float: left;
-    margin-right: 20px;
-    line-height: 1.5;
 }

@@ -11,7 +11,6 @@ const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
   style: path.join(__dirname, 'app/main.css'),
-  bs: path.join(__dirname, 'app/bootstrap.css'),
   test: path.join(__dirname, 'tests')
 
 };
@@ -24,8 +23,7 @@ const common = {
   // latter form given it's convenient with more complex configurations.
   entry: {
     app: PATHS.app,
-    style: PATHS.style,
-    bs: PATHS.bs
+    style: PATHS.style
 
   },
   // Add resolve.extensions.
@@ -93,11 +91,6 @@ if(TARGET === 'start' || !TARGET) {
     },
     module: {
       loaders: [
-        { test: /\.woff|woff2(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&mimetype=application/font-woff" },
-{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=application/octet-stream" },
-{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: "file" },
-{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: "url?limit=10000&mimetype=image/svg+xml" },
-        { test: /\.less$/, loader: "style!css!less" },
         // Define development specific CSS setup
         {
           test: /\.css$/,
