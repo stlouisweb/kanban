@@ -16,16 +16,35 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <button className="add-lane" onClick={this.addLane}>+</button>
+        <nav className="navbar navbar-inverse">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+              <a className="navbar-brand" href="#">Clippery</a>
+            </div>
 
-            <AltContainer
-              stores={[LaneStore]}
-              inject={{
-                lanes: () => LaneStore.getState().lanes || []
-              }}
-            >
-            <Lanes />
-          </AltContainer>
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+              <ul className="nav navbar-nav navbar-right">
+                <li><a href="#" onClick={this.addLane}>Add Category</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div>
+              <AltContainer
+                stores={[LaneStore]}
+                inject={{
+                  lanes: () => LaneStore.getState().lanes || []
+                }}
+              >
+              <Lanes />
+            </AltContainer>
+        </div>
       </div>
     );
   }

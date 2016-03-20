@@ -33,16 +33,17 @@ export default class Lane extends React.Component {
 
     return connectDropTarget(
       <div {...props}>
-        <div className="lane-header" onClick={this.activateLaneEdit}>
-          <div className="lane-add-note">
-            <button onClick={this.addNote}>+</button>
-          </div>
-          <Editable className="lane-name" editing={lane.editing}
+    <div className="panel panel-info">
+      <div className="panel-heading">
+        <div onClick={this.activateLaneEdit}>
+
+          <Editable editing={lane.editing}
             value={lane.name} onEdit={this.editName} />
-          <div className="lane-delete">
-          <button onClick={this.deleteLane}>x</button>
+          <a href="#" className="add-link btn btn-info btn-xs" onClick={this.addNote}>Add Link</a>
+            <a href="#" className="delete-lane btn btn-info text-danger btn-xs" onClick={this.deleteLane}>x</a>
         </div>
-        </div>
+      </div>
+      <div className="panel-body">
         <AltContainer
           stores={[NoteStore]}
           inject={{
@@ -54,6 +55,8 @@ export default class Lane extends React.Component {
           onEdit={this.editNote}
           onDelete={this.deleteNote} />
         </AltContainer>
+      </div>
+    </div>
       </div>
     );
   }

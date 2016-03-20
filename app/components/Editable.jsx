@@ -26,7 +26,7 @@ export default class Editable extends React.Component {
 
       return (
         <div onClick={this.props.onValueClick}>
-          <span className="value">{this.props.value}</span>
+          <h3 className="panel-title value">{this.props.value}</h3>
           {onDelete ? this.renderDelete() : null }
         </div>
       );
