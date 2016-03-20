@@ -6,7 +6,7 @@ This project was created by following along with this book: [SurviveJS Webpack a
 ### Installation
 
 1. Clone the repository     
-        `git clone git@github.com:stlouisweb/kanban.git <dir-name>`
+        `git clone git@github.com:stlouisweb/kanban.git <dir-name>`    
         `cd <dir-name>`
 2. Install dependencies     
         `npm install`
