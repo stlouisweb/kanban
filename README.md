@@ -1,6 +1,8 @@
 # SurviveJS Kanban project
 This project was created by following along with this book: [SurviveJS Webpack and React](http://survivejs.com/webpack_react/introduction/). It's a great read if you want to learn about React or Webpack or both.
 
+[Demo](http://stlouisweb.github.io/kanban/)
+
 ## Usage
 
 ### Installation
